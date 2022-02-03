@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c78554a5-d369-4918-a3e6-6351418d8bfa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/EjMatrizEspiral/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/EjMatrizEspiral/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EjMatrizEspiral/.idea/dictionaries/daniel_londoño.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EjMatrizEspiral/.idea/dictionaries/daniel_londoño.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EjMatrizEspiral/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EjMatrizEspiral/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EjMatrizEspiral/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EjMatrizEspiral/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EjMatrizEspiral/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EjMatrizEspiral/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EjMatrizEspiral/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EjMatrizEspiral/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EjMatrizEspiral/EjMatrizEspiral.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EjMatrizEspiral/EjMatrizEspiral.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EjMatrizEspiral/src/co/com/sofkau/tl/MatrizEspiral.java" beforeDir="false" afterPath="$PROJECT_DIR$/EjMatrizEspiral/src/co/com/sofkau/tl/MatrizEspiral.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="24ZO7EseZBbnbvvcp6X0JQlFaox" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/EjMatrizEspiral" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c78554a5-d369-4918-a3e6-6351418d8bfa" name="Changes" comment="" />
+      <created>1643834473565</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643834473565</updated>
+    </task>
+    <servers />
+  </component>
+</project>

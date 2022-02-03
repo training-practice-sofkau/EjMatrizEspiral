@@ -10,4 +10,14 @@ public class MatrizEspiral {
     // TODO: 2/02/2022 método para integrar todas las funcionalidades anteriores por medio de un menú que se comunique con el usuario
 
     // parámetros: matriz, nro fila o columna, el nro en el que comienza
+    public static void main(String[] args){
+
+    }
+
+    public static void recorrerColumnaAsc(int[][] matriz, int columna){
+
+        for(int i = matriz.length-1; i>=0; i--)
+            if(matriz[i][columna] == 0)
+                matriz[i][columna] = (columna+1)*(i+1);
+    }
 }
