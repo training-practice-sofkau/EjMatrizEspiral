@@ -15,13 +15,11 @@ public class MatrizEspiral {
         
     }
 
-    public static void recorrerColumnaAsc(int[][] matriz, int largoFilas, int largoColumnas){
+    public static void recorrerColumnaAsc(int[][] matriz, int largoFilas, int columna){
 
-        for(int j=largoColumnas-1; j>=0; j--){
-            for(int i=largoFilas-1; i>=0; i--){
-                if(matriz[i][j] == 0){
-                    matriz[i][j] = (j+1)*(i+1);
-                }
+        for(int i=largoFilas-1; i>=0; i--){
+            if(matriz[i][columna] == 0){
+                matriz[i][columna] = (columna+1)*(i+1);
             }
         }
     }
