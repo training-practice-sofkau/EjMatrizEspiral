@@ -11,19 +11,18 @@ public class MatrizEspiral {
 
     // parámetros: matriz, nro fila o columna, el nro en el que comienza
     public static void main(String[] args){
-        int[][] matriz = new int[8][9];
 
-        recorrerColumnaAsc(matriz, 8, 9);
         
     }
 
     public static void recorrerColumnaAsc(int[][] matriz, int largoFilas, int largoColumnas){
-        for(int i=largoColumnas; i>=0; i--){
-            for(int j=largoColumnas; j>=0; j--){
-                matriz[i][j] = j*i;
-                System.out.print(matriz[i][j]);
+
+        for(int j=largoColumnas-1; j>=0; j--){
+            for(int i=largoFilas-1; i>=0; i--){
+                if(matriz[i][j] == 0){
+                    matriz[i][j] = (j+1)*(i+1);
+                }
             }
         }
-        System.out.print("xd");
     }
 }
