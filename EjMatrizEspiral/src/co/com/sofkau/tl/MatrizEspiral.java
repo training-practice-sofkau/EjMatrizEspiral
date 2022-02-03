@@ -12,15 +12,12 @@ public class MatrizEspiral {
     // parámetros: matriz, nro fila o columna, el nro en el que comienza
     public static void main(String[] args){
 
-        
     }
 
-    public static void recorrerColumnaAsc(int[][] matriz, int largoFilas, int columna){
+    public static void recorrerColumnaAsc(int[][] matriz, int columna){
 
-        for(int i=largoFilas-1; i>=0; i--){
-            if(matriz[i][columna] == 0){
+        for(int i = matriz.length-1; i>=0; i--)
+            if(matriz[i][columna] == 0)
                 matriz[i][columna] = (columna+1)*(i+1);
-            }
-        }
     }
 }
