@@ -35,4 +35,22 @@ public class MatrizEspiral {
 
         return new int[filas][columnas];
     }
+
+    /**
+     * Método que llena las columnas de una matriz de izquierda a derecha
+     * @param matriz
+     * @param row
+     * @param number
+     * @return
+     */
+
+    public static int[][] fromLeftToRight(int[][] matriz, int row, int number){
+        for (int i = 0; i < matriz[row].length; i++){
+            if(matriz[row-1][i] == 0 ){
+                matriz[row-1][i] = number;
+                number+=1;
+            } 
+        }
+        return matriz;
+    }
 }
