@@ -53,4 +53,20 @@ public class MatrizEspiral {
         }
         return matriz;
     }
+
+
+    public static int initialValue = 0;
+    /**
+     * Método que llena las columnas de una matriz de arriba  a abajo
+     * @param matriz
+     * @param numCol
+     * @param start
+     * @return
+     */
+    public  static int[][] fromToptoBottom(int[][] matriz, int numCol, int start) {
+        for(int i = start + 1; i <= numCol - 1 ; i++) {
+            matriz[i][numCol - 1] = initialValue++;
+        }
+        return  matriz;
+    }
 }
