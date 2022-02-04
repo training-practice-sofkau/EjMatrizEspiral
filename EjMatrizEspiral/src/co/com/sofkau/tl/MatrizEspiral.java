@@ -101,7 +101,7 @@ public class MatrizEspiral {
 
         System.out.println("Ingrese el valor inicial con que se rellenará la matriz");
         valorInicial = scan.nextInt();
-        recorrerFilaIzqDer(nuevaMatriz, valorInicial);
+        rellenarMatrizEspiral(nuevaMatriz, valorInicial);
 
     }
 
