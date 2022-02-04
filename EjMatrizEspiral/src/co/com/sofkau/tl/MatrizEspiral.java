@@ -13,18 +13,46 @@ public class MatrizEspiral {
     // TODO: 2/02/2022 método para integrar todas las funcionalidades anteriores por medio de un menú que se comunique con el usuario
 
     // parámetros: matriz, nro fila o columna, el nro en el que comienza
+    /**
+     * @parameter matriz: Representa la matriz a rellenar
+     * @parameter coordenada: representa un vector de longitud 2, donde coordenada = (nro fila/col, nro incial)
+     */
+    private int[][] matriz;
 
-    private static int[][] matriz;
-    private static int numeroFila;
-    private static int valorInicial;
-    private static Scanner scan = new Scanner(System.in);
 
-    public static int[][] crearMatriz(int fila, int columna) {
+    public int[][] crearMatriz(int fila, int columna) {
         matriz = new int[fila][columna];
         return matriz;
     }
 
-    public static void rellenarMatrizEspiral(int[][] matriz, int valorInicial) {
+    public int[] recorrerFilaAscendente(int[][] matriz, int indiceFila, int valorInicial) {
+
+        int[] coordenada = new int[2];
+        for (int col = 0; col < matriz[indiceFila].length; ++col) {
+            if (matriz[indiceFila][col] == 0) {
+                matriz[indiceFila][col] = valorInicial++;
+                coordenada[0] = col;
+            }
+        }
+        coordenada[1] = valorInicial;
+        return coordenada;
+    }
+
+    public int[] recorrerColumnaDescendente(int[][] matriz, int indiceColumna, int valorInicial) {
+
+        int[] coordenada = new int[2];
+        for (int fila = 0; fila < matriz.length; ++fila) {
+            if (matriz[indiceColumna][fila]==0){
+                matriz[indiceColumna][fila] = valorInicial++;
+                coordenada[0]=fila;
+            }
+        }
+
+        return coordenada;
+
+    }
+
+    public void rellenarMatrizEspiral(int[][] matriz, int valorInicial) {
 
         int columnaActual = 0;
         int filaActual = 0;
@@ -75,7 +103,7 @@ public class MatrizEspiral {
     }
 
 
-    public static void imprimirMatriz(int[][] matriz) {
+    public void imprimirMatriz(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 System.out.print(matriz[i][j]);
@@ -87,23 +115,11 @@ public class MatrizEspiral {
         }
     }
 
-    public static void main(String[] args) {
-//        Scanner scan = new Scanner(System.in);
-        System.out.println("Ingrese el numero de filas");
-        int fila = scan.nextInt();
-        System.out.println("Ingrese el numero de columnas");
-        int columna = scan.nextInt();
-
-        int[][] nuevaMatriz = crearMatriz(fila, columna);
-        imprimirMatriz(nuevaMatriz);
-        int seleccion;
-
-
-        System.out.println("Ingrese el valor inicial con que se rellenará la matriz");
-        valorInicial = scan.nextInt();
-        rellenarMatrizEspiral(nuevaMatriz, valorInicial);
-
+    public int[][] getMatriz() {
+        return matriz;
     }
 
-
+    public void setMatriz(int[][] matriz) {
+        this.matriz = matriz;
+    }
 }
