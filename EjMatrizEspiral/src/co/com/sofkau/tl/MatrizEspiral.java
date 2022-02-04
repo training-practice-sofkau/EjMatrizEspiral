@@ -3,70 +3,70 @@ package co.com.sofkau.tl;
 import java.util.Scanner;
 
 public class MatrizEspiral {
-    // TODO: 2/02/2022 método para recorrer fila izq-der
     // TODO: 2/02/2022 método para recorrer fila der-izq
-    // TODO: 2/02/2022 método para recorrer columna desc
     // TODO: 2/02/2022 método para recorrer columna asc
-    // TODO: 2/02/2022 método para solicitar tamaño de matriz a llenar
     // TODO: 2/02/2022 método para integrar todas las funcionalidades anteriores por medio de un menú que se comunique con el usuario
+
+    /**
+     * Recorre la fila de una matriz de izquierda a derecha, aumentando un número recibido como parámetro.
+     *
+     * @param matrix       La matriz de enteros a llenar.
+     * @param numRow       El número de la fila a recorrer.
+     * @param initialValue El número inicial del recorrido.
+     * @return int[][] La matriz recorrida.
+     */
+    public static int[][] fromLeftToRight(int[][] matrix, int numRow, int initialValue) {
+        for (int numCol = 0; numCol < matrix[numRow].length; numCol++) {
+            if (matrix[numRow - 1][numCol] == 0) {
+                matrix[numRow - 1][numCol] = initialValue;
+                initialValue++;
+            }
+        }
+        return matrix;
+    }
+
+    /**
+     * Recorre la columna de una matriz de arriba a abajo, aumentando un número recibido como parámetro.
+     *
+     * @param matrix       La matriz de enteros a llenar.
+     * @param numCol       El número de la columna a recorrer
+     * @param initialValue El número inicial del recorrido.
+     * @return int[][] La matriz recorrida.
+     */
+    public static int[][] fromToptoBottom(int[][] matrix, int numCol, int initialValue) {
+        for (int numRow = 0; numRow < matrix.length; numRow++) {
+            if (matrix[numRow][numCol - 1] == 0) {
+                matrix[numRow][numCol - 1] = initialValue;
+                initialValue++;
+            }
+        }
+        return matrix;
+    }
 
     /**
      * Crea una matriz de tamaño nxm solicitando los datos al usuario.
      *
-     * @return int[][] Una matriz de enteros vacía.
+     * @return int[n][m] Una matriz de enteros vacía.
      */
-    public static int[][] crearMatriz() {
-        Scanner lector = new Scanner(System.in);
-        int filas;
-        int columnas;
+    public static int[][] createMatrix() {
+        Scanner reader = new Scanner(System.in);
+        int rows;
+        int columns;
 
         System.out.println("Tamaño de la matriz");
         System.out.println("- Filas:");
         do {
-            filas = lector.nextInt();
-        } while (filas > 50 || filas < 1);
+            rows = reader.nextInt();
+        } while (rows > 50 || rows < 1);
 
         System.out.println("- Columnas:");
         do {
-            columnas = lector.nextInt();
-        } while (columnas > 50 || columnas < 1);
+            columns = reader.nextInt();
+        } while (columns > 50 || columns < 1);
 
-        lector.close();
+        reader.close();
 
-        return new int[filas][columnas];
+        return new int[rows][columns];
     }
 
-    /**
-     * Método que llena las columnas de una matriz de izquierda a derecha
-     * @param matriz
-     * @param row
-     * @param number
-     * @return
-     */
-
-    public static int[][] fromLeftToRight(int[][] matriz, int row, int number){
-        for (int i = 0; i < matriz[row].length; i++){
-            if(matriz[row-1][i] == 0 ){
-                matriz[row-1][i] = number;
-                number+=1;
-            } 
-        }
-        return matriz;
-    }
-
-
-    public static int initialValue = 0;
-    /**
-     * Método que llena las columnas de una matriz de arriba  a abajo
-     * @param matriz
-     * @param numCol
-     * @param start
-     * @return
-     */
-    public  static int[][] fromToptoBottom(int[][] matriz, int numCol, int start) {
-        for(int i = start + 1; i <= numCol - 1 ; i++) {
-            matriz[i][numCol - 1] = initialValue++;
-        }
-        return  matriz;
-    }
 }
