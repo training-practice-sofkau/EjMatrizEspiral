@@ -24,15 +24,56 @@ public class MatrizEspiral {
         return matriz;
     }
 
-    public static void recorrerFilaIzqDer(int[][] matriz, int numeroFila, int valorInicial) {
+    public static void rellenarMatrizEspiral(int[][] matriz, int valorInicial) {
 
-        for (int j = 0; j < matriz[numeroFila - 1].length; j++) {
-            if (matriz[numeroFila - 1][j] == 0) {
-                matriz[numeroFila - 1][j] = valorInicial + j;
-            }
+        int columnaActual = 0;
+        int filaActual = 0;
+
+
+        for (int i = 0; i < matriz.length; i++) {
+
+            int cicloA = 1;
+
+            do {
+
+                for (int j = 0; j < matriz[i].length; j++) {
+                    if (matriz[i][j] == 0) {
+                        matriz[i][j] = valorInicial++;
+                        columnaActual = j;
+                    }
+                }
+
+                for (int j = 0; j < matriz.length; j++) {
+                    if (matriz[j][columnaActual] == 0) {
+                        matriz[j][columnaActual] = valorInicial++;
+                        filaActual = j;
+                    }
+                }
+                cicloA++;
+            } while (cicloA < 2);
+
+            int cicloB = 1;
+
+            do {
+
+                for (int j = matriz[filaActual].length - 1; j >= 0; j--) {
+                    if (matriz[filaActual][j] == 0) {
+                        matriz[filaActual][j] = valorInicial++;
+                        columnaActual = j;
+                    }
+                }
+
+                for (int j = matriz.length - 1; j >= 0; j--) {
+                    if (matriz[j][columnaActual] == 0) {
+                        matriz[j][columnaActual] = valorInicial++;
+                    }
+                }
+                cicloB++;
+            } while (cicloB < 2);
         }
         imprimirMatriz(matriz);
     }
+
 
     public static void imprimirMatriz(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
@@ -47,7 +88,7 @@ public class MatrizEspiral {
     }
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+//        Scanner scan = new Scanner(System.in);
         System.out.println("Ingrese el numero de filas");
         int fila = scan.nextInt();
         System.out.println("Ingrese el numero de columnas");
@@ -57,32 +98,10 @@ public class MatrizEspiral {
         imprimirMatriz(nuevaMatriz);
         int seleccion;
 
-        do {
 
-            System.out.println("Por favor escoja un método para llenar la matriz " + matriz.length + "X" + matriz[0].length);
-            System.out.println("1. Recorrer fila de izquierda a derecha.");
-            System.out.println("2. Recorrer fila de derecha a izquierda.");
-            System.out.println("3. Recorrer columna de arriba a abajo.");
-            System.out.println("4. Recorrer columna de abajo a arriba.");
-            seleccion = scan.nextInt();
-
-            switch (seleccion) {
-                case 1:
-                    System.out.println("Recorrerá la fila de izq. a der.");
-                    System.out.println("Ingrese el numero de fila a rellenar");
-                    numeroFila = scan.nextInt();
-                    System.out.println("Ingrese el valor inicial con que se rellenará la fila");
-                    valorInicial = scan.nextInt();
-                    recorrerFilaIzqDer(matriz, numeroFila, valorInicial);
-                    break;
-                default:
-                    System.out.println("Valor no válido. Saliendo...");
-
-            }
-
-
-        } while (seleccion >= 1 && seleccion <= 4);
-
+        System.out.println("Ingrese el valor inicial con que se rellenará la matriz");
+        valorInicial = scan.nextInt();
+        recorrerFilaIzqDer(nuevaMatriz, valorInicial);
 
     }
 
