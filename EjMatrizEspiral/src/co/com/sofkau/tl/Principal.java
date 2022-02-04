@@ -15,11 +15,11 @@ public class Principal {
 
         MatrizEspiral nuevaMatriz = new MatrizEspiral();
         int [][] matriz = nuevaMatriz.crearMatriz(fila, columna);
-        nuevaMatriz.imprimirMatriz(matriz);
+//        nuevaMatriz.imprimirMatriz(matriz);
 
-        System.out.println("Ingrese el valor inicial con que se rellenará la matriz");
-        valorInicial = scan.nextInt();
-        rellenarMatrizEspiral(nuevaMatriz, valorInicial);
+//        System.out.println("Ingrese el valor inicial con que se rellenará la matriz");
+//        int valorInicial = scan.nextInt();
+        nuevaMatriz.rellenarMatriz(matriz);
 
     }
 }

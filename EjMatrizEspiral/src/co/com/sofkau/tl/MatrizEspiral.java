@@ -17,18 +17,47 @@ public class MatrizEspiral {
      * @parameter matriz: Representa la matriz a rellenar
      * @parameter coordenada: representa un vector de longitud 2, donde coordenada = (nro fila/col, nro incial)
      */
-    private int[][] matriz;
+
 
 
     public int[][] crearMatriz(int fila, int columna) {
-        matriz = new int[fila][columna];
+        int[][] matriz = new int[fila][columna];
         return matriz;
     }
 
     public int[] recorrerFilaAscendente(int[][] matriz, int indiceFila, int valorInicial) {
 
         int[] coordenada = new int[2];
+
         for (int col = 0; col < matriz[indiceFila].length; ++col) {
+            if (matriz[indiceFila][col] == 0) {
+                matriz[indiceFila][col] = valorInicial++;
+                coordenada[0] = col;
+            }
+        }
+        coordenada[1] = valorInicial;
+        return coordenada;
+    }
+
+    public int[] recorrerColumnaAscendente(int[][] matriz, int indiceColumna, int valorInicial) {
+
+        int[] coordenada = new int[2];
+
+        for (int fila = 0; fila < matriz.length; ++fila) {
+            if (matriz[fila][indiceColumna] == 0) {
+                matriz[fila][indiceColumna] = valorInicial++;
+                coordenada[0] = fila;
+            }
+        }
+        coordenada[1] = valorInicial;
+        return coordenada;
+    }
+
+    public int[] recorrerFilaDescendente(int[][] matriz, int indiceFila, int valorInicial) {
+
+        int[] coordenada = new int[2];
+
+        for (int col = matriz[indiceFila].length - 1; col >= 0; --col) {
             if (matriz[indiceFila][col] == 0) {
                 matriz[indiceFila][col] = valorInicial++;
                 coordenada[0] = col;
@@ -41,67 +70,43 @@ public class MatrizEspiral {
     public int[] recorrerColumnaDescendente(int[][] matriz, int indiceColumna, int valorInicial) {
 
         int[] coordenada = new int[2];
-        for (int fila = 0; fila < matriz.length; ++fila) {
-            if (matriz[indiceColumna][fila]==0){
-                matriz[indiceColumna][fila] = valorInicial++;
-                coordenada[0]=fila;
+
+        for (int fila = matriz.length - 1; fila >= 0; --fila) {
+            if (matriz[fila][indiceColumna] == 0) {
+                matriz[fila][indiceColumna] = valorInicial++;
+                coordenada[0] = fila;
             }
         }
-
+        coordenada[1] = valorInicial;
         return coordenada;
-
     }
 
-    public void rellenarMatrizEspiral(int[][] matriz, int valorInicial) {
+    public void rellenarMatriz(int[][] matriz) {
 
-        int columnaActual = 0;
-        int filaActual = 0;
+        int filaInicial = 0;
+        int columnaInicial = 0;
+        int valorInicial = 1;
 
+        int [] coordenada;
 
         for (int i = 0; i < matriz.length; i++) {
-
-            int cicloA = 1;
-
-            do {
-
-                for (int j = 0; j < matriz[i].length; j++) {
-                    if (matriz[i][j] == 0) {
-                        matriz[i][j] = valorInicial++;
-                        columnaActual = j;
-                    }
-                }
-
-                for (int j = 0; j < matriz.length; j++) {
-                    if (matriz[j][columnaActual] == 0) {
-                        matriz[j][columnaActual] = valorInicial++;
-                        filaActual = j;
-                    }
-                }
-                cicloA++;
-            } while (cicloA < 2);
-
-            int cicloB = 1;
-
-            do {
-
-                for (int j = matriz[filaActual].length - 1; j >= 0; j--) {
-                    if (matriz[filaActual][j] == 0) {
-                        matriz[filaActual][j] = valorInicial++;
-                        columnaActual = j;
-                    }
-                }
-
-                for (int j = matriz.length - 1; j >= 0; j--) {
-                    if (matriz[j][columnaActual] == 0) {
-                        matriz[j][columnaActual] = valorInicial++;
-                    }
-                }
-                cicloB++;
-            } while (cicloB < 2);
+            coordenada = recorrerFilaAscendente(matriz,filaInicial, valorInicial);
+            columnaInicial = coordenada[0];
+            valorInicial = coordenada[1];
+            coordenada = recorrerColumnaAscendente(matriz,columnaInicial, valorInicial);
+            filaInicial = coordenada[0];
+            valorInicial = coordenada[1];
+            coordenada = recorrerFilaDescendente(matriz,filaInicial, valorInicial);
+            columnaInicial = coordenada[0];
+            valorInicial = coordenada[1];
+            coordenada = recorrerColumnaDescendente(matriz,columnaInicial, valorInicial);
+            filaInicial = coordenada[0];
+            valorInicial = coordenada[1];
         }
-        imprimirMatriz(matriz);
-    }
 
+        imprimirMatriz(matriz);
+
+    }
 
     public void imprimirMatriz(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
@@ -115,11 +120,4 @@ public class MatrizEspiral {
         }
     }
 
-    public int[][] getMatriz() {
-        return matriz;
-    }
-
-    public void setMatriz(int[][] matriz) {
-        this.matriz = matriz;
-    }
 }
