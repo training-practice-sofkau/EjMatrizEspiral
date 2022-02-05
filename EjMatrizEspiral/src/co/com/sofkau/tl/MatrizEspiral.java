@@ -47,11 +47,29 @@ public class MatrizEspiral {
         return matriz;
     }
 
+    public int [][] llenarDerIzq(int[][] matriz){
+
+        System.out.println("Ingrese el valor en la posición de inicio del barrido: ");
+        int initValMatrix = Integer.parseInt(ingresoDato.nextLine());
+        System.out.println("Ingrese la fila de la posición de inicio del barrido: ");
+        int initFila = Integer.parseInt(ingresoDato.nextLine());
+        for (int col = matriz[0].length-1; col >= 0; col--) {
+            switch (matriz [initFila][col]) {
+                case 0: matriz [initFila][col] = initValMatrix;
+                    initValMatrix++;
+                    break;
+            }
+        }
+        return matriz;
+    }
+
+
 
     public static void main(String[] args) {
 
         MatrizEspiral espiral= new MatrizEspiral();
         int [][] matrix = espiral.crearMatriz();
+        matrix = espiral.llenarDerIzq(matrix);
 
     }
 }
