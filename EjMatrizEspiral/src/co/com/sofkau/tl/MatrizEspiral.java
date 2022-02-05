@@ -63,13 +63,22 @@ public class MatrizEspiral {
         return matriz;
     }
 
+    public void imprimirMatriz(int[][] matriz){
 
+        for (int fil = 0; fil < matriz.length; fil++) {
+            for (int col = 0; col < matriz[0].length; col++) {
+                System.out.print( "    "+ matriz [fil][col]+ "      ");
+
+            }
+            System.out.println("\n");
+        }
+    }
 
     public static void main(String[] args) {
 
         MatrizEspiral espiral= new MatrizEspiral();
         int [][] matrix = espiral.crearMatriz();
         matrix = espiral.llenarDerIzq(matrix);
-
+        espiral.imprimirMatriz(matrix);
     }
 }
