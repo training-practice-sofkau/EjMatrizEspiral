@@ -1,8 +1,10 @@
 package co.com.sofkau.tl;
 
 public class MatrizEspiral {
-    MatrizEspiral(){
+
+    public MatrizEspiral(){
     }
+
     // TODO: 2/02/2022 método para recorrer fila izq-der
     /**
      * @author Felipe Quiceno , Fernando Quiceno
