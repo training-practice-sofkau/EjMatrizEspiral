@@ -17,12 +17,12 @@ public class MatrizEspiral {
      * */
 
     public static int[][] izquierdaADerecha(int[][]lista, int filaAmodificar, int numeroInicio ){
-        int filaReal = filaAmodificar - 1;                                                   // numero de la fila en la matriz
+        int filaReal = filaAmodificar - 1;                                                   // número de la fila en la matriz
 
         for (int i=0; i< lista[i].length;i++,numeroInicio++){
 
-            if(lista[filaReal][i] !=0){                                                     // condicional para evaluar si en ese campo ya hay un numero
-                numeroInicio--;                                                             // si hay un numero, lo saltamo y me conserva la secuencia , que ya traia
+            if(lista[filaReal][i] !=0){                                                     // condicional para evaluar si en ese campo ya hay un número
+                numeroInicio--;                                                             // si hay un número, lo saltamos y me conserva la secuencia , que ya traia
                 continue;
             }
             lista[filaReal][i] = numeroInicio;                                              // si el dato esta en cero, lo rellenamos con la secuencia
