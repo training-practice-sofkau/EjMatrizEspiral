@@ -15,11 +15,13 @@ public class MatrizEspiral {
 
 
     public static void main(String[] args) {
+        //Prueba de los metodos creados
         int[][] matriz;
         matriz = getMatriz();
-        showMatriz(avanceIzqDer(matriz, 4, 15));
+        avanceIzqDer(matriz, 6, 15);
+        showMatriz(matriz);
         System.out.println("matriz modificada: ");
-        showMatriz(avanceDerIzq(matriz, 6, 1));
+        showMatriz(matriz);
 
     }
 
@@ -68,18 +70,19 @@ public class MatrizEspiral {
      * @param matriz      matriz a modificar
      * @param filaInicial fila a partir de la cual se modifican los datos
      * @param numInicial  numero inicial, aumenta ascendentemente mientras se recorre la matriz
-     * @return retorna la matriz modificada
+     * @return retorna la posición de la columna final
      */
-    public static int[][] avanceIzqDer(int[][] matriz, int filaInicial, int numInicial) {
+    public static int avanceIzqDer(int[][] matriz, int filaInicial, int numInicial) {
 
         int columnas = matriz[0].length;
         for (int i = 0; i < columnas; i++) {
             if (matriz[filaInicial - 1][i] == 0) {
                 matriz[filaInicial - 1][i] = numInicial;
+                columnas=i;
                 numInicial++;
             }
         }
-        return matriz;
+        return columnas;
     }
 
     /**
@@ -88,16 +91,17 @@ public class MatrizEspiral {
      * @param matriz      matriz a modificar
      * @param filaInicial fila a partir de la cual se modifican los datos
      * @param numInicial  numero inicial, aumenta ascendentemente mientras se recorre la matriz
-     * @return retorna la matriz modificada
+     * @return retorna la posición de la columna final
      */
-    public static int[][] avanceDerIzq(int[][] matriz, int filaInicial, int numInicial) {
+    public static int avanceDerIzq(int[][] matriz, int filaInicial, int numInicial) {
         int columnas = matriz[0].length;
         for (int i = columnas - 1; i >= 0; i--) {
             if (matriz[filaInicial - 1][i] == 0) {
                 matriz[filaInicial - 1][i] = numInicial;
+                columnas=i;
                 numInicial++;
             }
         }
-        return matriz;
+        return columnas;
     }
-} 
+}
