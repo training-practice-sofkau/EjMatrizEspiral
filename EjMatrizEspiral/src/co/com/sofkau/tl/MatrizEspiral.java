@@ -33,4 +33,21 @@ public class MatrizEspiral {
         return matriz;
     }
 
+    /**
+     * Este metodo recibe una matriz y la imprime por cosola
+     * @param matriz matriz a imprimir
+     */
+    public static void showMatriz(int [][]matriz){
+
+        int filas = matriz.length;
+        int columnas = matriz[0].length;
+        for (int i = 0;i < filas;i++){
+            for(int j=0; j< columnas;j++){
+                System.out.print(" "+ matriz[i][j] + ",");
+            }
+            System.out.print("\n");
+        }
+        System.out.print("\n");
+    }
+
 }
