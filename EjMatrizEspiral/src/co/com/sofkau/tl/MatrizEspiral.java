@@ -69,4 +69,22 @@ public class MatrizEspiral {
         return matriz;
     }
 
+    /**
+     * Este metodo recibe una matriz y la recorre de derecha a izquierda modificando sus valores
+     * @param matriz matriz a modificar
+     * @param filaInicial fila a partir de la cual se modifican los datos
+     * @param numInicial numero inicial, aumenta ascendentemente mientras se recorre la matriz
+     * @return retorna la matriz modificada
+     */
+    public static int[][] avanceDerIzq(int [][] matriz, int filaInicial, int numInicial){
+        int columnas = matriz[0].length;
+        for (int i=columnas-1; i >= 0; i--){
+            if(matriz[filaInicial -1][i] == 0){
+                matriz[filaInicial -1][i]=numInicial;
+                numInicial++;
+            }
+        }
+        return matriz;
+    }
+
 }
