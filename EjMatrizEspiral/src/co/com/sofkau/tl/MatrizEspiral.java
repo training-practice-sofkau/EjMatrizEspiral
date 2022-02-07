@@ -50,4 +50,23 @@ public class MatrizEspiral {
         System.out.print("\n");
     }
 
+    /**
+     * Este metodo recibe una matriz y la recorre de izquierda a derecha modificando sus valores
+     * @param matriz matriz a modificar
+     * @param filaInicial fila a partir de la cual se modifican los datos
+     * @param numInicial numero inicial, aumenta ascendentemente mientras se recorre la matriz
+     * @return retorna la matriz modificada
+     */
+    public static int[][] avanceIzqDer(int [][] matriz, int filaInicial, int numInicial){
+
+        int columnas = matriz[0].length;
+        for (int i=0; i < columnas; i++){
+            if(matriz[filaInicial -1][i] == 0){
+                matriz[filaInicial -1][i]=numInicial;
+                numInicial++;
+            }
+        }
+        return matriz;
+    }
+
 }
