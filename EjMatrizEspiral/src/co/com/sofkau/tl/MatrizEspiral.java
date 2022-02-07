@@ -2,6 +2,9 @@ package co.com.sofkau.tl;
 
 import java.util.Scanner;
 
+/**
+ * Desarrollado por Alvaro Mena, Juan Gil
+ */
 public class MatrizEspiral {
     // TODO: 2/02/2022 método para recorrer fila izq-der
     // TODO: 2/02/2022 método para recorrer fila der-izq
