@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EjMatrizEspiral.iml" filepath="$PROJECT_DIR$/EjMatrizEspiral.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MatrizEnEspiral.iml" filepath="$PROJECT_DIR$/MatrizEnEspiral.iml" />
     </modules>
   </component>
 </project>
