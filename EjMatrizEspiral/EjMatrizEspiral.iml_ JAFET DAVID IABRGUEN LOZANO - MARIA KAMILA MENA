@@ -29,15 +29,7 @@ public class Main {
             for (int i = a; i <= n - a; i++) {
                 M[i][n - a + 1] = x;
                 x++;
-            }
-            for (int i = n - a + 1; i >= a + 1; i--) {
-                M[n - a + 1][i] = x;
-                x++;
-            }
-            for (int i = n - a + 1; i >= a + 1; i--) {
-                M[i][a] = x;
-                x++;
-            }
+            
         }
         if (n % 2 == 1) {
             M[n / 2 + 1][n / 2 + 1] = x;
